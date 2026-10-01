@@ -7,5 +7,5 @@ func Initalize() {
 
 	InitalizeRoutes(r)
 
-	r.Run("8080")
+	r.Run(":8080")
 }
