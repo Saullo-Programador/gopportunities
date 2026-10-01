@@ -5,93 +5,93 @@
 [![Database](https://img.shields.io/badge/Database-SQLite-003B57?style=flat-square&logo=sqlite)](https://www.sqlite.org/)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
-GoOpportunities is a high-performance REST API developed in Go for job opportunity management. It provides a scalable backend for recruitment platforms, allowing full CRUD operations on job openings with a focus on clean code and developer experience.
+GoOpportunities é uma API REST de alta performance desenvolvida em Go para o gerenciamento de oportunidades de emprego. Fornece um backend escalável para plataformas de recrutamento, permitindo operações completas de CRUD em vagas, com foco em código limpo e experiência do desenvolvedor.
 
-## ✨ Key Features
+## ✨ Principais Funcionalidades
 
-- **Full CRUD Lifecycle**: Complete management of job openings (Create, Read, Update, Delete).
-- **Interactive Documentation**: Automated API documentation using Swagger/OpenAPI for seamless integration.
-- **Efficient Persistence**: Leveraging GORM for optimized database interactions and schema migrations.
-- **Structured Logging**: Centralized logging system for better observability and debugging.
-- **Type-Safe Schemas**: Strictly defined data models ensuring API consistency.
+- **Ciclo de Vida CRUD Completo**: Gestão total de vagas (Criação, Leitura, Atualização e Exclusão).
+- **Documentação Interativa**: Documentação automática da API utilizando Swagger/OpenAPI para integração simplificada.
+- **Persistência Eficiente**: Utilização do GORM para interações otimizadas com o banco de dados e migrações de schema.
+- **Logging Estruturado**: Sistema de logs centralizado para melhor observabilidade e depuração.
+- **Schemas Tipados**: Modelos de dados estritamente definidos, garantindo a consistência da API.
 
-## 🛠️ Tech Stack
+## 🛠️ Stack Tecnológica
 
-| Technology | Purpose | Justification |
+| Tecnologia | Propósito | Justificativa |
 | :--- | :--- | :--- |
-| **Go** | Language | Selected for its superior concurrency model and runtime efficiency. |
-| **Gin Gonic** | Web Framework | Chosen for its minimalist approach and high-speed routing. |
-| **GORM** | ORM | Provides a powerful abstraction layer for database operations. |
-| **SQLite** | Database | Lightweight and portable, ideal for rapid development and testing. |
-| **Swagger** | Documentation | Standardizes the API contract for frontend and third-party consumers. |
+| **Go** | Linguagem | Escolhida por seu modelo de concorrência superior e eficiência de runtime. |
+| **Gin Gonic** | Framework Web | Selecionado por sua abordagem minimalista e roteamento de alta velocidade. |
+| **GORM** | ORM | Fornece uma camada de abstração poderosa para operações de banco de dados. |
+| **SQLite** | Banco de Dados | Leve e portátil, ideal para desenvolvimento rápido e testes. |
+| **Swagger** | Documentação | Padroniza o contrato da API para consumidores de front-end e terceiros. |
 
-## 🏗️ Architecture
+## 🏗️ Arquitetura
 
-The project follows a modular architecture to ensure separation of concerns and maintainability:
+O projeto segue uma arquitetura modular para garantir a separação de preocupações e a manutenibilidade:
 
-- `config/`: System initialization, environment variables, and database connection.
-- `handler/`: Controller layer responsible for request parsing and response orchestration.
-- `router/`: Routing definitions and middleware integration.
-- `schemas/`: Domain entities and database models (GORM).
-- `docs/`: Auto-generated OpenAPI specifications.
+- `config/`: Inicialização do sistema, variáveis de ambiente e conexão com o banco de dados.
+- `handler/`: Camada de controle responsável pelo parsing de requisições e orquestração de respostas.
+- `router/`: Definições de rotas e integração de middlewares.
+- `schemas/`: Entidades de domínio e modelos de banco de dados (GORM).
+- `docs/`: Especificações OpenAPI geradas automaticamente.
 
-## 🚀 Getting Started
+## 🚀 Como Começar
 
-### Prerequisites
+### Pré-requisitos
 - Go 1.20+
 - Git
 
-### Installation & Setup
-1. **Clone the repository**:
+### Instalação e Configuração
+1. **Clone o repositório**:
    ```bash
    git clone https://github.com/Saullo-Programador/gopportunities.git
-   cd gopportunities
+   cd goopportunities
    ```
 
-2. **Install dependencies**:
+2. **Instale as dependências**:
    ```bash
    go mod tidy
    ```
 
-3. **Run the application**:
+3. **Execute a aplicação**:
    ```bash
    go run main.go
    ```
 
-The API will be available at `http://localhost:8080`.
+A API estará disponível em `http://localhost:8080`.
 
-## 📖 API Reference
+## 📖 Referência da API
 
-Access the interactive Swagger UI to explore and test endpoints:
+Acesse a interface interativa do Swagger para explorar e testar os endpoints:
 👉 `http://localhost:8080/swagger/index.html`
 
-### Main Endpoints
+### Principais Endpoints
 
-| Method | Endpoint | Description |
+| Método | Endpoint | Descrição |
 | :--- | :--- | :--- |
-| `GET` | `/api/v1/openings` | List all available opportunities |
-| `GET` | `/api/v1/opening` | Get details of a specific opening |
-| `POST` | `/api/v1/opening` | Create a new job opportunity |
-| `PUT` | `/api/v1/opening` | Update existing opening data |
-| `DELETE` | `/api/v1/opening` | Remove an opening from the system |
+| `GET` | `/api/v1/openings` | Lista todas as oportunidades disponíveis |
+| `GET` | `/api/v1/opening` | Detalhes de uma vaga específica |
+| `POST` | `/api/v1/opening` | Cria uma nova oportunidade de emprego |
+| `PUT` | `/api/v1/opening` | Atualiza dados de uma vaga existente |
+| `DELETE` | `/api/v1/opening` | Remove uma vaga do sistema |
 
 ## 🗺️ Roadmap
 
-- [ ] **Authentication**: Implement JWT (JSON Web Tokens) for secure access.
-- [ ] **Database Migration**: Support for PostgreSQL for production environments.
-- [ ] **Unit Testing**: Implement test suites for handlers and services.
-- [ ] **Dockerization**: Create a Docker image for easier deployment.
-- [ ] **CI/CD**: Setup GitHub Actions for automated linting and testing.
+- [ ] **Autenticação**: Implementar JWT (JSON Web Tokens) para acesso seguro.
+- [ ] **Migração de Banco**: Suporte para PostgreSQL para ambientes de produção.
+- [ ] **Testes Unitários**: Implementar suítes de testes para handlers e serviços.
+- [ ] **Dockerização**: Criar imagem Docker para facilitar o deploy.
+- [ ] **CI/CD**: Configurar GitHub Actions para linting e testes automatizados.
 
-## 🤝 Contributing
+## 🤝 Contribuições
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contribuições são bem-vindas! Sinta-se à vontade para enviar um Pull Request.
 
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. Faça um Fork do projeto
+2. Crie sua branch de feature (`git checkout -b feature/MinhaFuncionalidade`)
+3. Faça o commit de suas alterações (`git commit -m 'Adiciona MinhaFuncionalidade'`)
+4. Push para a branch (`git push origin feature/MinhaFuncionalidade`)
+5. Abra um Pull Request
 
 ---
-Developed by [Saullo Programador](https://github.com/Saullo-Programador)
+Desenvolvido por [Saullo Programador](https://github.com/Saullo-Programador)
