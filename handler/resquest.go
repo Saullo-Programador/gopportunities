@@ -2,7 +2,7 @@ package handler
 
 import "fmt"
 
-func errorParamIsRequired(name, typ string) error {
+func errParamIsRequired(name, typ string) error {
 	return fmt.Errorf("param: %s (type: %s) is required", name, typ)
 }
 
@@ -22,28 +22,48 @@ func (r *CreateOpeningRequest) Validate() error {
 		return fmt.Errorf("request body is empty")
 	}
 	if r.Role == "" {
-		return errorParamIsRequired("role", "string")
+		return errParamIsRequired("role", "string")
 	}
 	if r.Title == "" {
-		return errorParamIsRequired("title", "string")
+		return errParamIsRequired("title", "string")
 	}
 	if r.Description == "" {
-		return errorParamIsRequired("description", "string")
+		return errParamIsRequired("description", "string")
 	}
 	if r.Company == "" {
-		return errorParamIsRequired("company", "string")
+		return errParamIsRequired("company", "string")
 	}
 	if r.Location == "" {
-		return errorParamIsRequired("location", "string")
+		return errParamIsRequired("location", "string")
 	}
 	if r.Link == "" {
-		return errorParamIsRequired("link", "string")
+		return errParamIsRequired("link", "string")
 	}
 	if r.Remote == nil {
-		return errorParamIsRequired("remote", "bool")
+		return errParamIsRequired("remote", "bool")
 	}
 	if r.Salary <= 0 {
-		return errorParamIsRequired("salary", "int64")
+		return errParamIsRequired("salary", "int64")
 	}
 	return nil
+}
+
+
+type UpdateOpeningRequest struct {
+	Role        string `json:"role"`
+	Title       string `json:"title"`
+	Description string `json:"description"`
+	Company     string `json:"company"`
+	Location    string `json:"location"`
+	Remote      *bool  `json:"remote"`
+	Link        string `json:"link"`
+	Salary      int64  `json:"salary"`
+}
+
+func (r *UpdateOpeningRequest) Validate() error {
+	if r.Role != "" || r.Title != "" || r.Description != "" || r.Company != "" || r.Location != "" || r.Link != "" || r.Remote != nil || r.Salary > 0 {
+		return nil
+	}
+	return fmt.Errorf("request body is empty")
+
 }
